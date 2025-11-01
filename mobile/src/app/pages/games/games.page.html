@@ -1,0 +1,52 @@
+<!-- src/app/pages/games/games.page.html -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Próximos Partidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Partidos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-refresher slot="fixed" (ionRefresh)="loadGames()">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      refreshingSpinner="crescent"
+      refreshingText="Actualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="games-list-container">
+    <ion-list *ngIf="!loading && games.length > 0; else noGames">
+      <ion-item *ngFor="let game of games" class="game-item">
+        <ion-label>
+          <h2 class="game-title">{{ game.homeTeam?.name || 'Equipo Local' }} vs {{ game.awayTeam?.name || 'Equipo Visitante' }}</h2>
+          <p class="game-id">ID: {{ game.id }}</p>
+          <p class="game-date" *ngIf="game.played_at">Fecha: {{ game.played_at }}</p>
+        </ion-label>
+        <ion-button fill="clear" class="action-button" (click)="reportResult(game.id)">
+          <ion-icon slot="start" name="stats-chart-outline"></ion-icon>
+          Reportar
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-spinner *ngIf="loading" name="crescent" class="loading-spinner"></ion-spinner>
+
+    <ng-template #noGames>
+      <ion-card class="empty-state-card">
+        <ion-card-header>
+          <ion-icon name="calendar-outline" class="empty-icon"></ion-icon>
+          <ion-card-title class="empty-title">No hay partidos pendientes</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="empty-content">
+          <p>Por ahora no hay partidos programados o sin resultados.</p>
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+  </div>
+</ion-content>

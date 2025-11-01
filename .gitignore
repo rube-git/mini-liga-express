@@ -1,0 +1,22 @@
+# Node
+node_modules/
+dist/
+www/
+# PHP / Laravel
+/vendor
+.env
+.phpunit.result.cache
+Homestead.yaml
+Homestead.json
+/storage/*.key
+/public/storage
+# OS
+.DS_Store
+Thumbs.db
+# IDE
+.idea/
+.vscode/
+# Generated
+*.log
+*.sqlite
+*.zip

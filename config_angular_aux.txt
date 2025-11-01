@@ -1,0 +1,8 @@
+Paso 1: Instalar Angular CLI
+
+npm install -g @angular/cli
+
+Paso 2: Crear el Proyecto con las Especificaciones del Script
+
+# ¡Asegúrate de estar en la carpeta raíz!
+ng new web --directory=web --routing --style=scss --skip-git

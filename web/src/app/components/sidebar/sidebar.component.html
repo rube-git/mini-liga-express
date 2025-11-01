@@ -1,0 +1,30 @@
+<!-- src/app/components/sidebar/sidebar.component.html -->
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <h3 class="app-title">MiniLiga Express</h3>
+  </div>
+  <nav class="sidebar-nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a 
+          class="nav-link" 
+          routerLink="/teams" 
+          routerLinkActive="active"
+        >
+          <span class="nav-icon">👥</span>
+          <span class="nav-text">Equipos</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a 
+          class="nav-link" 
+          routerLink="/standings" 
+          routerLinkActive="active"
+        >
+          <span class="nav-icon">🏆</span>
+          <span class="nav-text">Clasificación</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>

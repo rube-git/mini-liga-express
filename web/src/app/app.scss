@@ -1,0 +1,12 @@
+/* Estilos para el layout principal */
+    .app-container {
+      display: flex;
+      min-height: 100vh; // Ocupa toda la altura de la ventana
+    }
+
+    .main-content {
+      flex: 1; // Toma el espacio restante
+      margin-left: 240px; // Ancho del sidebar
+      padding: 2rem; // Espacio interno
+      transition: margin-left 0.3s ease; // Transición suave si el sidebar se colapsa
+    }

@@ -1,0 +1,144 @@
+// src/app/pages/games/games.page.scss
+.games-list-container {
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100%;
+}
+
+ion-list {
+  background: transparent;
+  padding: 0;
+}
+
+.game-item {
+  --background: #ffffff;
+  --border-radius: 16px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  ion-label {
+    padding: 16px 0;
+  }
+
+  .game-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .game-id {
+    font-size: 13px;
+    color: #718096;
+    margin: 4px 0;
+    font-weight: 500;
+  }
+
+  .game-date {
+    font-size: 14px;
+    color: #4a5568;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+
+    &::before {
+      content: "📅";
+      margin-right: 6px;
+    }
+  }
+}
+
+.action-button {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --background-hover: linear-gradient(135deg, #5568d3 0%, #6a3f91 100%);
+  --color: #ffffff;
+  --border-radius: 12px;
+  font-weight: 600;
+  text-transform: none;
+  padding: 12px 20px;
+  margin: 8px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  }
+
+  ion-icon {
+    font-size: 20px;
+  }
+}
+
+.loading-spinner {
+  display: block;
+  margin: 80px auto;
+  --color: #ffffff;
+  transform: scale(1.5);
+}
+
+.empty-state-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  margin: 40px 20px;
+  text-align: center;
+  padding: 40px 20px;
+
+  .empty-icon {
+    font-size: 80px;
+    color: #667eea;
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .empty-title {
+    color: #2d3748;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .empty-content {
+    p {
+      color: #718096;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+ion-toolbar {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color: #ffffff;
+
+  ion-title {
+    font-weight: 700;
+    font-size: 20px;
+  }
+}
+
+ion-refresher-content {
+  --color: #ffffff;
+}

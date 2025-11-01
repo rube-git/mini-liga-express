@@ -1,0 +1,81 @@
+// src/app/components/sidebar/sidebar.component.scss
+
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%); // Fondo oscuro
+  color: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000; // Asegura que esté por encima de otros elementos
+}
+
+.sidebar-header {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #334155;
+
+  .app-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f8fafc;
+  }
+}
+
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto; // Permite scroll si hay muchos items
+  padding: 1rem 0;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: #334155;
+    color: #e2e8f0;
+  }
+
+  &.active { // Clase aplicada por routerLinkActive
+    background-color: #10b981; // Color activo (verde)
+    color: white;
+    font-weight: 600;
+
+    .nav-icon {
+      color: white;
+    }
+  }
+}
+
+.nav-icon {
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+  color: #94a3b8;
+  width: 24px; // Asegura un ancho consistente
+  text-align: center;
+}
+
+.nav-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
