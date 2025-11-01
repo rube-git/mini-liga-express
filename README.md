@@ -1,36 +1,45 @@
-# Prueba técnica — MiniLiga Express (≤ 4 h)
+# Prueba técnica: Miniliga Express
 
-Este repositorio es una **semilla** lista para que los candidatos clonen y completen la prueba express en ≤ 4 horas.  
-Incluye estructura, documentación y **scripts** que generan los proyectos de **Laravel**, **Angular** e **Ionic/Capacitor**.
+Miniliga Express es una app para gestionar ligas deportivas pequeñas. Permite registrar equipos, partidos y resultados, también muestra una tabla de clasificación en tiempo real.
 
-> Instrucciones detalladas en cada subcarpeta: `backend/`, `web/`, `mobile/`.
+Este repositorio contiene: backend API REST con Laravel, como también el frontend web Aplicación Angular y App Móvil con IONIC. 
 
-## Resumen del MVP
-- **Laravel** API:
-  - `GET /api/teams`
-  - `POST /api/teams` `{ name }`
-  - `POST /api/matches/{id}/result` `{ home_score, away_score }`
-  - `GET /api/standings`
-- **Angular**:
-  - Pestaña **Equipos** (alta + listado)
-  - Pestaña **Clasificación**
-- **Ionic/Capacitor**:
-  - Lista de próximos partidos
-  - Registrar resultado (POST al backend)
+## Estructura del Proyecto
+- backend/: Aplicación Laravel (API REST).
+- web/: Aplicación Angular (Frontend Web).
 
-## Scripts de inicialización
-Ejecuta desde la raíz (macOS/Linux). En Windows usa WSL o ejecuta manualmente los comandos equivalentes.
+## Requisitos
+
+- **Backend:**
+  - PHP 8.1+
+  - Composer
+  - SQLite
+- **Frontend:**
+  - Node.js
+  - npm
+ 
+  ## Instalación
+
+  ### 1. Clonar el repositorio
 
 ```bash
-bash scripts/init_backend.sh
-bash scripts/init_web.sh
-bash scripts/init_mobile.sh
+git clone https://github.com/rube-git/mini-liga-express.git
+cd mini-liga-express
+cd backend
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
+```
+```bash
+cd ../web
+npm install
+npm start
 ```
 
-> Los scripts usan los CLI oficiales (`laravel new`, `ng new`, `ionic start`) si están disponibles.  
-> Alternativamente, sigue los pasos manuales en los README de cada carpeta.
-
-## Extras (opcionales)
-- Camera preview en móvil.
-- Orden de standings por `points`, `goal_diff`, `goals_for`.
-- Docker Compose con MySQL.
+```bash
+cd mobile
+npm install
+npm start o ionic serve
+```
